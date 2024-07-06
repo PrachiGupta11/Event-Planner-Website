@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <link rel="stylesheet" href="Cart.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo"><span>S</span>wapna</a>
+    </header>
+
+    <section class="cart" id="cart">
+        <h1 class="heading">Your Cart</h1>
+
+        <div class="cart-container">
+            <!-- Example of an item in the cart -->
+            <div class="cart-item" id="cart-item">
+                <div class="image">
+                    <img src="" alt="Wedding Decoration" id="img">
+                </div>
+                <div class="content">
+                    <h3 id="heading"></h3>
+                    <p class="price" id="price"></p>
+                    <button class="remove-btn" onclick="RemoveBtn()">Remove</button>
+                </div>
+            </div>
+            <!-- More items can be added here -->
+        </div>
+
+        <div class="empty-cart-message" id="empty-cart-message" style="display: none; font-size: 20px;">
+            Your cart is empty.
+            <a href="decoration_types_list.html">Go to Decoration</a>
+        </div>
+
+        <div class="cart-total" id="cart-total">
+            <h3>Total: <span id="total-price"></span></h3>
+            <a href="Checkout.html"><button class="btn">Checkout</button></a>
+        </div>
+    </section>
+
+    <script>
+        const cartItem = document.getElementById('cart-item');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const cartTotal = document.getElementById('cart-total');
+        document.addEventListener("DOMContentLoaded", function () {
+
+
+            const detail = JSON.parse(localStorage.getItem("selected-decoration"))
+            if (detail) {
+                document.getElementById('img').src = detail.image;
+                document.getElementById("heading").innerText = detail.heading;
+                document.getElementById("price").innerText = detail.price;
+                document.getElementById('total-price').innerText = ' INR  ' + detail.price
+            } else {
+                cartItem.style.display = 'none';
+                emptyCartMessage.style.display = 'block';
+                cartTotal.style.display = 'none';
+            }
+        })
+        function RemoveBtn() {
+            localStorage.removeItem('selected-decoration')
+
+            // Hide cart item and show empty cart message
+            cartItem.style.display = 'none';
+            emptyCartMessage.style.display = 'block';
+            cartTotal.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

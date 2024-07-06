@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css"> <!-- Make sure to link your CSS file correctly -->
+
+</head>
+
+<body>
+    <div class="login-box">
+        <h1>Login</h1>
+        <form>
+            <div class="input-container">
+                <input type="text" id="username" placeholder="Username">
+            </div>
+            <div class="input-container">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <div>
+                <label id="fields-required"></label>
+            </div>
+            <button class="btn" id="login" onclick="handleLogin(event)">Login</button>
+            <button class="btn" id="signup"><a href="signup.html">Signup</a></button>
+            <div id="forgot_password" >
+                <a href="Forgot_password.html">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                document.getElementById("fields-required").innerText = "All Fields are required";
+            } else {
+                let validUser = false;
+
+                for (let i = 0; i < localStorage.length; i++) {
+                    let key = localStorage.key(i)
+                    if (key.startsWith('user_')) {
+                        let value = localStorage.getItem(key);
+                        let data = JSON.parse(value);
+
+                        if (username === data.username && password === data.password) {
+                            localStorage.setItem("loggedInUser", username);
+                            validUser = true;
+                            window.location.href = "../index.html";
+                            break;
+                        }
+                    }
+
+                }
+
+                if (!validUser) {
+                    document.getElementById("fields-required").innerText = "Invalid Username and Password";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

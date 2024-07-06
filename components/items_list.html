@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoration Booking</title>
+    <link rel="stylesheet" href="items.css">
+    <link rel="stylesheet" href="items_list.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav__bar">
+              <div class="nav__header">
+                <div class="logo nav__logo">
+                  <div><a href="#" class="logo"><span>S</span>wapna</a></div>
+                </div>
+                <div class="nav_menu_btn" id="menu-btn">
+                  <i class="ri-menu-line"></i>
+                </div>
+              </div>
+              <ul class="nav__links" id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#service">Service</a></li>
+                <li><a href="index.html#decoration-type">Decorations</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#review">Review</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="./components/login.html">Login</a></li>
+              </ul>
+            </div>
+          </nav>      
+    </header>
+
+    <main>
+        <!-- Decoration type selection Section -->
+        <section  >
+          <div  >
+              <form action="#">
+                <div class="search-box">
+                  <h1>Your Event,Your Style</h1>
+                  <p>Discover the top decorations for weddings and other events to create your perfect celebration.</p>
+                  <select type="text" class="search-field">
+                    <option disabled selected>Select decoration type</option>
+                    <option value="Wedding Decoration">Wedding Decoration</option>
+                    <option value="Haldi Decoration">Haldi Decoration</option>
+                    <option value="Mehndi Decoration">Mehndi Decoration</option>
+                    <option value="Cocktail Party">Cocktail Party</option>
+                    <option value="Birthday Decoration">Birthday decoration</option>
+                    <option value="Anniversary Decoration">Anniversary decoration</option>
+                    <option value="Kids Decoration">Kids decoration</option>
+                    <option value="Corporate Events">Corporate Events</option>
+                  </select>
+                  <button class="btn">Search</button>
+                </div>
+              </form>
+          </div>
+      </section>
+
+        <!-- Hotel Rooms Section -->
+        <section class="room__container">
+           <div class="room__grid"> 
+            <div class="room__card">
+                <img src="${item.image}" alt="${item.heading}">
+                <div class="room__details">
+                    <h3>${item.heading}</h3>
+                    <p class="end">INR ${item.price}</p>
+                    <button class="btn end">Add to cart</button>
+                </div>
+            </div>
+            </div> 
+
+            <div class="room__grid"> 
+              <div class="room__card">
+                  <img src="${item.image}" alt="${item.heading}">
+                  <div class="room__details">
+                      <h3>${item.heading}</h3>
+                      <p class="end">INR ${item.price}</p>
+                      <button class="btn end">Add to cart</button>
+                  </div>
+              </div>
+              </div> 
+        </section>
+    </main>
+
+    <script src="./Items.js">     </script>
+
+</body>
+</html>

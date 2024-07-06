@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="signup.css"> <!-- Make sure to link your CSS file correctly -->
+    
+    
+</head>
+<body>
+    <div class="signup-box">
+        <h1>Signup</h1>
+        <form action="#">
+            <div class="input-container">
+                <input type="text" id="username" placeholder="Username">
+            </div>
+            <div class="input-container">
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div class="input-container">
+                <input type="password" id="password"  placeholder="Password">
+            </div>
+            <div class="input-container">
+                <input type="password" id="confirm-password" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="btn" id="signup" onclick="handleForm(event)">Signup</button>
+            <button type="submit" class="btn" id="login"><a href="login.html">Login</a></button>
+        </form>
+    </div>
+    <script>
+        function handleForm(e){
+           e.preventDefault();
+           if(validateForm())
+           {
+            handleSignup();
+           }
+        }
+        function handleSignup()
+        {
+           const username=document.getElementById("username").value;
+           const email=document.getElementById("email").value;
+           const password=document.getElementById("password").value;
+           const confirm_password=document.getElementById("confirm-password").value;
+
+        //    console.log("User- name "+username+" password : "+password+"  , "+email)
+        //    localStorage.setItem("username",username);
+
+        let userData={
+            username:username,
+            email:email,
+            password:password,
+            confirm_password:confirm_password
+        }
+        // convert obj to json data
+
+        localStorage.setItem('user_'+email,JSON.stringify(userData));
+
+        
+        }
+    </script>
+    <script src="./Javascript files/FormValidation.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Gateway</title>
+  <link rel="stylesheet" href="Payment_Gateway.css">
+</head>
+<body>
+  <!-- <section class="payment-gateway">
+    <div class="container">
+      <h1>Payment Gateway</h1>
+      <div class="payment-details">
+        <form> -->
+          <!-- <div class="input-container">
+            <label for="cardholder-name">Cardholder Name</label>
+            <input type="text" id="cardholder-name" required>
+          </div> -->
+          <!-- <div class="input-container">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" required>
+          </div> -->
+          <!-- <div class="input-container">
+            <label for="expiry-date">Expiry Date</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+          </div> -->
+          <!-- <div class="input-container">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" required>
+          </div> -->
+          <!-- <button type="submit" class="btn">Place Order</button> -->
+        <!-- </form>
+      </div>
+    </div>
+  </section> -->
+  <div class="forgot-password-box">
+    <h1>Payment Gateway</h1>
+    <form onsubmit="savePaymentDetails(event)">
+        <div class="input-container">
+            <input type="text" id="cardholder-name" placeholder="Card Holder Name">
+        </div>
+        <div class="input-container">
+            <input type="text" id="card-number" placeholder="Card Number">
+        </div>
+        <div class="input-container">
+            <input type="text" id="expiry-date" placeholder="Expiry Date (MM/YY)">
+        </div>
+        <div class="input-container">
+            <input type="text" id="cvv" placeholder="CVV">
+        </div>
+        <button class="btn" type="submit">Place Order</button>
+    </form>
+</div>
+<script>
+  function savePaymentDetails(e){
+    e.preventDefault();
+    console.log("fdfd")
+    let cardHolder = document.getElementById("cardholder-name").value;
+    let cardNumber = document.getElementById("card-number").value;
+    let expiryDate = document.getElementById("expiry-date").value;
+    let cvv = document.getElementById("cvv").value;
+
+    if(cardHolder=="" || cardNumber=="" || expiryDate=="" || cvv==""){
+      alert("Please Enter Details");
+    }
+    else{
+      if(cardNumber.length != 12 || cvv.length !=3)
+      {
+        alert("Please Enter Valid Details");
+      }
+      else{
+        console.log("fdhsehh")
+        const paymentDetails={
+          cardHolder:cardHolder,
+          cardNumber:cardNumber,
+          expiryDate:expiryDate,
+          cvv:cvv
+         
+        };
+        console.log(cardHolder,cardNumber,expiryDate,cvv)
+        localStorage.setItem('paymentDetails',JSON.stringify(paymentDetails));
+        window.location.href='OrderPlaced.html'
+      }
+      
+    }
+  }
+</script>
+</body>
+</html>

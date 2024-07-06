@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decoration Booking</title>
+  <link rel="stylesheet" href="decoration_types_list.css">
+
+</head>
+
+<body>
+  <header class="header">
+
+    <a href="../index.html" class="logo"><span>s</span>wapna</a>
+
+    <nav class="navbar">
+      <a href="../index.html">home</a>
+      <a href="../index.html">service</a>
+      <a href="../index.html">decorations</a>
+      <a href="../index.html">about</a>
+      <a href="../index.html">gallery</a>
+      <a href="../index.html">review</a>
+      <a href="../index.html">contact</a>
+      <a href="login.html" id="login">Book Now</a>
+      <a href="Cart.html"> <img src="../images/cart.png" ></a>
+    </nav>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+  </header>
+
+
+  <main>
+    <!-- Decoration type selection Section -->
+    <section class="home" id="home">
+      <div>
+        <form>
+          <div class="search-box">
+            <h1>Your Event,Your Style</h1>
+            <p>Discover the top decorations for weddings and other events to create your perfect celebration.</p>
+            <select type="text" class="search-field" id="decoration-type-select">
+              <option disabled selected>Select decoration type</option>
+              <option value="Wedding_Decoration">Wedding Decoration</option>
+              <option value="Haldi_Decoration">Haldi Decoration</option>
+              <option value="Mehndi_Decoration">Mehndi Decoration</option>
+              <option value="Cocktail Party">Cocktail Party</option>
+              <option value="Birthday Decoration">Birthday decoration</option>
+              <option value="Anniversary Decoration">Anniversary decoration</option>
+              <option value="Kids Decoration">Kids decoration</option>
+              <option value="Corporate Events">Corporate Events</option>
+            </select>
+            <button id="search-btn" class="btn" onclick="searchBooking()">Search</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Decoration Type Section -->
+
+  <h1 class="heading">our <span>decorations</span></h1>
+
+  <section class="decoration-type" id="decoration-type">
+    <div class="box-container">
+      <!-- getting data from API through Items.js file -->
+    </div>
+  </section>
+
+  <script src="./Items.js"></script>
+
+</body>
+
+</html>

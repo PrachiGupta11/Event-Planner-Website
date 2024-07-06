@@ -1,0 +1,220 @@
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  --background-color: #F3E5F5; /* Lavender Blush */
+  --primary-color: #CE93D8; /* Medium Lavender */
+  --secondary-color: #B39DDB; /* Light Purple */
+  --accent-color: #D1C4E9; /* Soft Lilac */
+  --text-color: #333333; /* Dark Gray */
+  --theme-color: #9b59b6; /* Update theme color to primary color */
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  /* text-transform: capitalize; */
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 82.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+/* body { */
+  /* background: var(--background-color); Use the new background color */
+  /* font-family: 'Poppins', sans-serif; */
+    /* background-color: #f8fafc; */
+    /* color: #0f172a;
+    margin: 0;
+    padding: 0; */
+ /* }  */
+
+header {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 1.5rem 9%; */
+  }
+
+  header .logo {
+    font-weight: bolder;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+  }
+  
+  header .logo span {
+    color: var(--theme-color);
+  }
+
+body {
+    background: var(--background-color); /* Use the new background color */
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #f8fafc; */
+    color: #0f172a;
+    margin: 0;
+    padding: 0;
+}
+main {
+    padding-top: 5rem; 
+}
+
+/* search form */
+
+form{
+    margin-top: 20px;
+  }
+  
+  .search-box {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+  
+  .search-box h1 {
+    font-size: 3rem;
+    color: var(--text-color); /* Use the new text color */
+    margin-bottom: 1rem;
+  }
+  
+  .search-box p {
+    font-size: 1.5rem;
+    color: var(--text-color); /* Use the new text color */
+    margin-bottom: 2rem;
+  }
+  
+  .search-field {
+    width: 30%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    margin-bottom: 1.5rem;
+    margin-right: 5px;
+  }
+  
+  .search-field option {
+    background: #ecc5f3;
+    color: #fff;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    background: var(--primary-color); /* Use the primary color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    background: var(--accent-color); /* Use the accent color */
+    transform: scale(1.05);
+  }
+  
+/* Room Section Styles */
+.room__container {
+    padding: 4rem 1rem;
+}
+
+.room__grid {
+    margin: 10px ;
+    background-color: rgb(245, 245, 249);
+    color: var(--text-color);
+    display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 2fr));
+  gap: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* gap: 5rem; */
+    /* height: 600px; */
+
+}
+.room__card {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem; */
+    /* flex-direction: column; */
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    /* overflow: hidden; */
+    /* column-gap: 3%; */
+}
+
+.room__card img {
+    width: 40%;
+    height: auto;
+    border-bottom: 2px solid #ccc; /* Add border below the image */
+    margin: 10px;
+
+}
+
+.room__details {
+    width: 55%;
+    padding: 1rem;
+    text-align: start;
+}
+
+.room__details h3 {
+    font-size: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.room__details p {
+    margin-bottom: 1rem;
+}
+.room__details .end{
+    position: relative;
+    /* left: 450px; */
+    top: 5px;
+    font-size: x-large;
+    
+}
+
+.room__details button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #f6ac0f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.room__details button:hover {
+    background-color: #e39f0d; 
+    /* Darker shade of the button color */
+}
+
+
+/* Flex reverse class */
+.flex-reverse {
+    flex-direction: row-reverse;
+}
